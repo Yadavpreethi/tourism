@@ -1,0 +1,68 @@
+/* Basic styling for the navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0a8f6a;
+  padding: 10px 20px;
+  font-family: 'Arial', sans-serif;
+  height: 50px;
+}
+
+img {
+  height: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.tagline{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  margin-left: 15px;
+  margin-bottom: 25px;
+
+}
+.tagline h1{
+  font-size: 24px;
+  color: white;
+  margin-bottom: 0;
+
+
+}
+.tagline p{
+  margin: 0;
+  font-size: 14px;
+  color: #ffcb05;
+}
+
+
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ffcb05;
+}
+
+.left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
