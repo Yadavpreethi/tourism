@@ -12,6 +12,19 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mode-switcher {
+  margin-left: auto; /* Align to the right of the navbar */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 
 .App-header {
   background-color: #282c34;

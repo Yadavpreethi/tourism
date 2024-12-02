@@ -59,6 +59,20 @@ img {
   align-items: center;
 }
 
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Mode switcher button styles */
+.mode-switcher {
+  margin-left: auto; /* Align to the right of the navbar */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
 
 
 

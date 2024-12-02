@@ -1,0 +1,39 @@
+.favorites-page {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .favorites-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .favorite-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .favorite-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .favorite-item img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  .favorite-item h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+  

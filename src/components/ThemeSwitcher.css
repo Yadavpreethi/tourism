@@ -1,0 +1,48 @@
+/* Default light theme */
+body {
+    background-color: #fff;
+    color: #000;
+    font-family: Arial, sans-serif;
+  }
+  
+  
+  /* Dark theme */
+  body.dark-theme {
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #005f6b;
+  }
+  /* Light theme (default) */
+body {
+    background-color: #fff;
+    color: #000;
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar, .footer {
+    background-color: #0a8f6a;  /* Light green for navbar and footer in light mode */
+  }
+  
+  /* Dark theme */
+  body.dark-theme {
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  body.dark-theme .navbar, 
+  body.dark-theme .footer {
+    background-color: #043A07 ; /* Dark green for navbar and footer in dark mode */
+  }
+  
