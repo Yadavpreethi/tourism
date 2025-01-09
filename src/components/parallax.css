@@ -1,0 +1,22 @@
+/* parallax.css */
+
+.parallax {
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  background-attachment: fixed; /* Parallax scrolling effect */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; /* Cover the entire section */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+.parallax-content {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Make text readable */
+  padding: 20px;
+}

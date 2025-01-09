@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ThemeSwitcher.css';
 
-
 function ThemeSwitcher() {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -9,29 +8,23 @@ function ThemeSwitcher() {
     const savedMode = localStorage.getItem('theme');
     if (savedMode === 'dark') {
       setDarkMode(true);
-      document.body.classList.add('dark-theme');  // Apply dark theme class to body
+      document.body.classList.add('dark-theme');
     } else {
       document.body.classList.remove('dark-theme');
     }
   }, []);
 
   const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    if (!darkMode) {
-      document.body.classList.add('dark-theme');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.body.classList.remove('dark-theme');
-      localStorage.setItem('theme', 'light');
-    }
+    const isDark = !darkMode;
+    setDarkMode(isDark);
+    document.body.classList.toggle('dark-theme', isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
   };
 
   return (
-    <div>
-      <button onClick={toggleTheme}>
-        {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-      </button>
-    </div>
+    <button onClick={toggleTheme} className="theme-switcher">
+      {darkMode ? '🌙 Dark Mode' : '☀️ Light Mode'}
+    </button>
   );
 }
 

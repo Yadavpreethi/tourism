@@ -1,5 +1,6 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+
 import './DestinationDetail.css';
 
 function DestinationDetail() {
@@ -45,6 +46,7 @@ function DestinationDetail() {
   if (!destination) {
     return <h1>Destination Not Found</h1>;
   }
+  
 
   return (
     <div
@@ -63,6 +65,28 @@ function DestinationDetail() {
       </div>
     </div>
   );
+  function LazyImage({ src, alt }) {
+    const [isVisible, setIsVisible] = useState(false);
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        const image = document.getElementById(alt);
+        const rect = image.getBoundingClientRect();
+        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+          setIsVisible(true);
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      handleScroll(); // Check visibility on initial render
+  
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, [alt]);
+  
+    return <img id={alt} src={isVisible ? src : ''} alt={alt} />;
+  }
 }
 
 export default DestinationDetail;

@@ -1,27 +1,25 @@
 import React from 'react';
-import './navbar.css'; // Import CSS file
+import './navbar.css';
 import { Link } from 'react-router-dom';
-
-
 
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className='left'>
-< img src={require('./Rang-Yatra.png')} alt='logo'/>
-<div className='tagline'>
-<h1>RangYatra</h1>
-<p>Unfolding The Beauty of Bharat</p>
-</div>
-</div>
-<Link to="/favorites" className="nav-link">Favorites</Link>
+      <div className="left">
+        <img src={require('./Rang-Yatra.png')} alt="logo" />
+        <div className="tagline">
+          <h1>RangYatra</h1>
+          <p>Unfolding The Beauty of Bharat</p>
+        </div>
+      </div>
+
+      <Link to="/favorites" className="nav-link">Favorites</Link>
 
       <ul className="nav-links">
-        <li><a href="#home">Home</a></li>
+        <li><Link to="/" className="nav-link">Home</Link></li>
+        <li><Link to="/tours" className="nav-link">Tours</Link></li>
         <li><a href="#destinations">Destinations</a></li>
-        <li><a href="#tours">Tours</a></li>
         <li><a href="#contact">Contact Us</a></li>
-        
       </ul>
     </nav>
   );

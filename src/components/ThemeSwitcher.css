@@ -6,6 +6,8 @@ body {
   }
   
   
+
+
   /* Dark theme */
   body.dark-theme {
     background-color: #121212;
@@ -45,4 +47,36 @@ body {
   body.dark-theme .footer {
     background-color: #043A07 ; /* Dark green for navbar and footer in dark mode */
   }
+  .theme-switcher {
+    position: fixed;
+    z-index: 1000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  /* Style for the hero section (home page) */
+  .theme-switcher.hero {
+    top: 80px; /* Adjust position for below navbar */
+    right: 20px;
+    background-color: #f8c12e; /* Yellow for hero section */
+  }
+  
+  /* Style for other pages */
+  .theme-switcher.other-pages {
+    top: 20px; /* Top-right corner */
+    right: 20px;
+    background-color: #f8c12e; /* Same yellow */
+  }
+  
+  .theme-switcher:hover {
+    background-color: #e0a400;
+    transform: scale(1.1);
+  }
+  
   

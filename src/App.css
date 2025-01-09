@@ -49,3 +49,35 @@
     transform: rotate(360deg);
   }
 } */
+ /* Light Theme */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #007bff;
+  --secondary-color: #f9f9f9;
+  --link-color: #007bff;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --primary-color: #ffcc00;
+  --secondary-color: #1e1e1e;
+  --link-color: #ffcc00;
+}
+
+/* Apply Variables Globally */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color);
+}
+
+.container {
+  background-color: var(--secondary-color);
+}
+
