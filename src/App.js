@@ -1,76 +1,94 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Navbar from './components/navbar';
 import Home from './components/home';
 import ImageCarousel from './components/ImageCarousel';
 import DestinationDetail from './components/DestinationDetail';
 import Footer from './components/footer';
 import ThemeSwitcher from './components/ThemeSwitcher';
-import FavoritesPage from './components/FavoritesPage'; // Import the Favorites page
-import Tours from './components/tours'; // Import the Tours page
-import TourDetail from './components/toursDetail'; // Import the TourDetail page
+import FavoritesPage from './components/FavoritesPage';
+import Tours from './components/tours';
+import TourDetail from './components/toursDetail';
 
-
-function App() {
-  const [favorites, setFavorites] = useState([]); // Manage favorites list
-  const [theme, setTheme] = useState('light'); // Manage theme state
+function ScrollToSection() {
   const location = useLocation();
 
-  // Determine if the current route is the home page
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 200);
+      }
+    }
+  }, [location]);
+
+  return null;
+}
+
+function App() {
+  const [favorites, setFavorites] = useState([]);
+  const [theme, setTheme] = useState('light');
+  const location = useLocation();
+
   const isHomePage = location.pathname === '/';
 
-  // Function to toggle the theme
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme); // This modifies the <html> tag
+    document.documentElement.setAttribute('data-theme', newTheme);
   };
 
-  
-
-  // Function to add/remove favorites
   const handleFavoriteToggle = (image) => {
     setFavorites((prevFavorites) =>
       prevFavorites.some((fav) => fav.title === image.title)
-        ? prevFavorites.filter((fav) => fav.title !== image.title) // Remove if already in favorites
-        : [...prevFavorites, image] // Add if not in favorites
+        ? prevFavorites.filter((fav) => fav.title !== image.title)
+        : [...prevFavorites, image]
     );
   };
 
   return (
     <div className="App">
-      {/* Show Navbar */}
-      <Navbar />
+      <ScrollToSection />
+      
+      {/* Animated Navbar */}
+      <motion.div 
+        initial={{ y: -50, opacity: 0 }} 
+        animate={{ y: 0, opacity: 1 }} 
+        transition={{ duration: 0.5 }}
+      >
+        <Navbar />
+      </motion.div>
 
-      {/* Show ThemeSwitcher */}
-      <ThemeSwitcher
-        toggleTheme={toggleTheme}
-        currentTheme={theme}
-        positionClass={isHomePage ? 'hero' : 'other-pages'}
-      />
+      <ThemeSwitcher toggleTheme={toggleTheme} currentTheme={theme} positionClass={isHomePage ? 'hero' : 'other-pages'} />
 
-      <Routes>
-        {/* Home Page */}
-        <Route
-          path="/"
-          element={
-            <>
-              <Home />
-              <ImageCarousel favorites={favorites} handleFavoriteToggle={handleFavoriteToggle} />
-            </>
-          }
-        />
-        {/* Destination Detail Page */}
-        <Route path="/destination/:title" element={<DestinationDetail />} />
-        {/* Favorites Page */}
-        <Route path="/favorites" element={<FavoritesPage favorites={favorites} />} />
-        {/* Tours Page */}
-        <Route path="/tours" element={<Tours />} />
-        {/* Tour Detail Page */}
-        <Route path="/tour/:id" element={<TourDetail />} />
-      </Routes>
+      {/* Animated Page Transitions */}
+      <motion.div
+        key={location.pathname}
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -50 }}
+        transition={{ duration: 0.4 }}
+      >
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Home />
+                <ImageCarousel favorites={favorites} handleFavoriteToggle={handleFavoriteToggle} />
+              </>
+            }
+          />
+          <Route path="/destination/:title" element={<DestinationDetail />} />
+          <Route path="/favorites" element={<FavoritesPage favorites={favorites} />} />
+          <Route path="/tours" element={<Tours />} />
+          <Route path="/tour/:id" element={<TourDetail />} />
+        </Routes>
+      </motion.div>
 
-      {/* Show Footer only on the home page */}
       {isHomePage && <Footer />}
     </div>
   );

@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Parallax from './parallax'; // Import the Parallax component
+import Parallax from './parallax'; // Ensure the import path is correct
 import './tours.css'; // Add styling for the tours page
 
 function Tours() {
-  // List of tours
   const tours = [
     { id: 1, title: 'Golden Triangle Tour', description: 'A tour covering Delhi, Agra, and Jaipur.' },
     { id: 2, title: 'Kerala Backwaters Tour', description: 'A peaceful houseboat experience in Kerala.' },

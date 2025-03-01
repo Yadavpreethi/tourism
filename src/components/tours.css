@@ -7,16 +7,12 @@
   text-align: center;
   margin-top: 150px;
 }
-.{
-  background-color: #0a8f6a;
-}
 
 /* Tours Container Styling */
 .tours-container {
   padding: 20px 50px;
   text-align: center;
-  background-color:#119DA4 ;
-
+  background-color: #1f7668;
 }
 
 .tours-heading {
@@ -28,14 +24,13 @@
 
 .tours-subheading {
   font-size: 1.2rem;
-  color: #666;
+  color: #504f4f;
   margin-bottom: 30px;
 }
 
 .tours-list {
   list-style-type: none;
   padding: 0;
-
 }
 
 .tour-item {
@@ -64,17 +59,21 @@
   color: #8C6057;
 }
 
-
-/* Tours.css */
-.tours-container {
-  background-color: var(--secondary-color);
-  color: var(--text-color);
+/* Dark theme */
+body.dark-theme .tours-container {
+  background-color: #000; /* Change background color to black */
 }
 
-.tour-link {
-  color: var(--link-color);
+body.dark-theme .tour-item {
+  background-color: #333; /* Dark color for tour items */
+  color: #fff; /* Light text color */
 }
 
-.tour-link:hover {
-  color: var(--primary-color);
+body.dark-theme .tour-link {
+  color: #fff; /* Light color for links */
+  text-decoration: none; /* Remove underline from text */
+}
+
+body.dark-theme .tour-link:hover {
+  color: #8C6057; /* Hover color for links */
 }

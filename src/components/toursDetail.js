@@ -16,12 +16,12 @@ function Tours() {
       <h2>Available Tours</h2>
       <ul>
         {tours.map((tour) => (
-          <li key={tour.id}>
-            <Link to={`/tour/${tour.id}`}>
+          <p key={tour.id}>
+            <Link to={`/tour/${tour.id}`} style={{ textDecoration: 'none', color: '#ffcb05' }}>
               <h3>{tour.title}</h3>
               <p>{tour.description}</p>
             </Link>
-          </li>
+          </p>
         ))}
       </ul>
     </div>

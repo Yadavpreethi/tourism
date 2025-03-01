@@ -22,7 +22,10 @@ function ThemeSwitcher() {
   };
 
   return (
-    <button onClick={toggleTheme} className="theme-switcher">
+    <button 
+      onClick={toggleTheme} 
+      className={`theme-switcher ${darkMode ? 'dark-mode' : 'light-mode'}`}
+    >
       {darkMode ? '🌙 Dark Mode' : '☀️ Light Mode'}
     </button>
   );

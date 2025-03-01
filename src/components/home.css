@@ -49,6 +49,8 @@ body {
 }
 
 
+
+
 .hero-content h1 {
   font-size: 4rem;
   margin-bottom: 20px;
@@ -107,3 +109,13 @@ body {
 }
 
 
+/* Dark theme */
+body.dark-theme .btn {
+  background-color: #121212; /* Dark color for button in dark mode */
+  color: #fff;
+}
+
+body.dark-theme .btn:hover {
+  background-color: #005f6b;
+  color: #fff;
+}

@@ -13,9 +13,10 @@ function Navbar() {
         </div>
       </div>
 
-      <Link to="/favorites" className="nav-link">Favorites</Link>
+      
 
       <ul className="nav-links">
+     <li><Link to="/favorites" className="nav-link">Favorites</Link></li>
         <li><Link to="/" className="nav-link">Home</Link></li>
         <li><Link to="/tours" className="nav-link">Tours</Link></li>
         <li><a href="#destinations">Destinations</a></li>

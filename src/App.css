@@ -60,7 +60,6 @@
 
 /* Dark Theme */
 body.dark-theme {
-  --bg-color: #121212;
   --text-color: #ffffff;
   --primary-color: #ffcc00;
   --secondary-color: #1e1e1e;

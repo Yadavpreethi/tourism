@@ -13,6 +13,9 @@
 .destination-grid {
   display: flex;
 }
+.heart.favorite {
+  background-color: transparent;
+}
 
 .destination-item {
   flex-shrink: 0;

@@ -15,7 +15,7 @@ body {
   }
   
   button {
-    background-color: #008CBA;
+    background-color: 7C9082;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -48,7 +48,7 @@ body {
     background-color: #043A07 ; /* Dark green for navbar and footer in dark mode */
   }
   .theme-switcher {
-    position: fixed;
+    position:absolute;
     z-index: 1000;
     padding: 10px 15px;
     border: none;
@@ -79,4 +79,47 @@ body {
     transform: scale(1.1);
   }
   
-  
+  button.theme-switcher {
+    background-color: #7C9082;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button.theme-switcher:hover {
+    background-color: #005f6b;
+}
+
+/* Light theme (default) */
+body {
+    background-color: #fff;
+    color: #000;
+    font-family: Arial, sans-serif;
+}
+
+.navbar, .footer {
+    background-color: #0a8f6a;  /* Light green for navbar and footer in light mode */
+}
+
+button.theme-switcher.light-mode {
+    background-color: #e0e0e0; /* Light color for button in light mode */
+    color: #000;
+}
+
+/* Dark theme */
+body.dark-theme {
+    background-color: #121212;
+    color: #fff;
+}
+
+body.dark-theme .navbar, body.dark-theme .footer {
+    background-color: #333; /* Dark color for navbar and footer in dark mode */
+}
+
+button.theme-switcher.dark-mode {
+    background-color: #333; /* Dark color for button in dark mode */
+    color: #fff;
+}
+

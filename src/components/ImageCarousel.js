@@ -28,7 +28,7 @@ function ImageCarousel({ favorites, handleFavoriteToggle }) {
     };
 
     // Clone images when the component mounts
-    cloneImages();
+   // cloneImages();
 
     const handleScroll = () => {
       if (!carouselRef.current) return; // Ensure the ref is valid before handling scroll
@@ -56,30 +56,31 @@ function ImageCarousel({ favorites, handleFavoriteToggle }) {
   }, [images]);
 
   return (
+    
     <div className="carousel-container">
-      <div className="image-carousel" ref={carouselRef}>
-        <div className="destination-grid">
-          {images.map((image, index) => (
-            <div key={index} className="destination-item">
-              <Link to={`/destination/${encodeURIComponent(image.title)}`}>
-                <img src={require(`${image.src}`)} alt={image.alt} />
-                <h3>{image.title}</h3>
-              </Link>
-              <button
-                onClick={() => handleFavoriteToggle(image)} // Toggle favorite
-                style={{
-                  backgroundColor: favorites.some((fav) => fav.title === image.title)
-                    ? 'yellow'
-                    : 'transparent'
-                }}
-              >
-                {favorites.some((fav) => fav.title === image.title) ? '❤️' : '🤍'}
-              </button>
-            </div>
-          ))}
+  <div className="image-carousel" ref={carouselRef}>
+    <div className="destination-grid">
+      {images.map((image, index) => (
+        <div key={index} className="destination-item">
+          <Link to={`/destination/${encodeURIComponent(image.title)}`}>
+            <img src={require(`${image.src}`)} alt={image.alt} />
+            <h3>{image.title}</h3>
+          </Link>
+          <button
+            onClick={() => handleFavoriteToggle(image)} // Toggle favorite
+            style={{
+              backgroundColor: favorites.some((fav) => fav.title === image.title)
+                ? 'transparent'
+                : 'transparent'
+            }}
+          >
+            {favorites.some((fav) => fav.title === image.title) ? '❤️' : '🤍'}
+          </button>
         </div>
-      </div>
+      ))}
     </div>
+  </div>
+</div>
   );
 }
 
