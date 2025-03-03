@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Parallax from './parallax'; // Ensure the import path is correct
